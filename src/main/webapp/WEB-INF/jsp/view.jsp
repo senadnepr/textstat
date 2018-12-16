@@ -9,6 +9,7 @@
 </head>
 <body>
 <h3>View</h3>
+
 <table border="1" cellpadding="8" cellspacing="0">
     <thead>
     <tr>
