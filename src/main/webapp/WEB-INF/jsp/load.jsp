@@ -11,7 +11,7 @@
 <body>
 <h3>Load</h3>
 
-<form method="post" action="/load" enctype="multipart/form-data">
+<form method="post" action="rest/load" enctype="multipart/form-data">
     <div class="form-group">
         <label for="file">Example file input</label>
         <input type="file" name="file" class="form-control-file" id="file">

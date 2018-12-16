@@ -17,9 +17,15 @@ public class RootController {
         return "index";
     }
 
-    @GetMapping("/test")
+    @GetMapping("/view")
     public String setUser() {
 
-        return "test";
+        return "view";
+    }
+
+    @GetMapping("/load")
+    public String loadTextFiles(){
+
+        return "load";
     }
 }

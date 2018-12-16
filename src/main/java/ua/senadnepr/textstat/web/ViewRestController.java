@@ -37,17 +37,4 @@ public class ViewRestController {
         return textFiles;
     }
 
-//    @GetMapping
-//    public ModelAndView getTextFiles(ModelAndView modelAndView, RedirectAttributes attributes){
-//
-//        List<TextFile> textFiles = service.findAll();
-//
-// //       ModelAndView modelAndView = new ModelAndView("redirect:/test");
-//        modelAndView.setViewName("redirect:/test");
-//        modelAndView.addObject("textFiles", "adfsgdfagf");
-//
-//        //      modelAndView.addObject("textFiles", textFiles);
-// //       attributes.addAttribute(textFiles);
-//        return modelAndView;
-//    }
 }

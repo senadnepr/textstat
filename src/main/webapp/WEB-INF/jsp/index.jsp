@@ -5,7 +5,8 @@
 </head>
 <body>
 <h3>Hello</h3>
-<a href="test">view</a>
+<a href="view">view</a>
+
 <a href="load">load</a>
 
 </body>
