@@ -31,7 +31,7 @@ public class TextFileService {
         try {
             return repository.findAll();
         }catch (Exception e){
-            throw new ApplicationException("Error read statistic in database");
+            throw new ApplicationException("Error read statistic from database");
         }
     }
 }

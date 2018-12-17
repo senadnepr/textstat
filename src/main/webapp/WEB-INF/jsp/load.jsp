@@ -2,33 +2,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
-<head>
-    <title>Title</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="resources/js/viewcom.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-</head>
+<jsp:include page="fragments/headTag.jsp"/>
 <body>
-<h3>Load</h3>
+<jsp:include page="fragments/bodyHeader.jsp"/>
+<div class="jumbotron">
+    <div class="container">
+        <a href="home" class="btn btn-primary" role="button">Home</a>
+        <a href="view" class="btn btn-primary" role="button">View</a>
 
-<form method="post" action="load" enctype="multipart/form-data">
-    <div class="form-group">
-        <label for="file">Example file input</label>
-        <input type="file" name="file" class="form-control-file" id="file">
+        <div class="center">
+            <h2>Load page</h2>
+
+
+        <form method="post" action="load" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">Load file for statistic</label>
+                <input type="file" accept=".txt" name="file" class="form-control-file" id="file">
+            </div>
+            <button type="submit" class="btn btn-primary">Load</button>
+        </form>
+
+        <h3 class="error">${error}</h3>
+        <h2>${message}</h2>
+        </div>
     </div>
-    <button type="submit">Load</button>
-
-
-
-</form>
-
-<h3>${error}</h3>
-
-<div id="div1"><h2>${message}</h2></div>
-<a href="view">view</a>
-
-
-
+</div>
+<jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>

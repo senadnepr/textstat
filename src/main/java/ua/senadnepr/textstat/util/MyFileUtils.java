@@ -23,18 +23,6 @@ public class MyFileUtils {
 
         }
 
-//        Path target = null;
-//        try {
-//
-//            byte[] bytes = file.getBytes();
-//
-//            Path path = Paths.get(pathToWrite + file.getOriginalFilename());
-//            target = Files.write(path, bytes);
-//
-//        } catch (IOException e) {
-//            throw new ApplicationException("Error write file");
-//        }
-
         TextFileString textFileString = parseFile(target.toPath());
         TextFile textFile = createStatistic(textFileString);
 

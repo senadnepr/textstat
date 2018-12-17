@@ -1,0 +1,33 @@
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    margin-bottom: 60px;
+}
+th{
+    text-align: center;
+}
+td{
+    text-align: center;
+}
+
+.light{
+    color: whitesmoke;
+}
+.center{
+    text-align: center;
+}
+.error{
+    color: darkred;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-decoration-color: red;
+    background-color: darkgrey;
+}

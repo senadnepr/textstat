@@ -11,7 +11,8 @@ $(document).ready(function() {
                 $.each(result, function(i, textStat){
 
                     var fileRow = '<tr>' +
-                        '<td>' + textStat.name + '</td>' +
+                        '<td style="text-align: left">' + textStat.name + '</td>' +
+                        '<td style="text-align: left">' + textStat.fullName + '</td>' +
                         '<td>' + textStat.numberOfString + '</td>' +
                         '<td>' + textStat.averageNumber + '</td>' +
                         '<td>' + textStat.maxWord + '</td>' +
