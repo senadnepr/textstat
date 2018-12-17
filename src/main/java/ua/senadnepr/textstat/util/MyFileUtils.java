@@ -5,6 +5,7 @@ import ua.senadnepr.textstat.model.TextFile;
 import ua.senadnepr.textstat.model.TextFileString;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,8 +25,21 @@ public class MyFileUtils {
         }
 
         TextFileString textFileString = parseFile(target.toPath());
-        TextFile textFile = createStatistic(textFileString);
 
+        TextFile textFile = null;
+        try {
+            textFile = createStatistic(textFileString);
+        } catch (ApplicationException e) {
+            if ("Empty file error".equals(e.getMessage())) {
+                try {
+                    Files.delete(target.toPath());
+                    System.out.println(target.toPath().toString());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+            }
+            throw e;
+        }
         return textFile;
     }
 
@@ -39,18 +53,25 @@ public class MyFileUtils {
         BufferedReader bufRead = new BufferedReader(input);
         String myLine = null;
         List<String> list = new ArrayList<>();
+        try {
+            while (true) {
 
-        while (true) {
-            try {
                 myLine = bufRead.readLine();
+                if (myLine == null) break;
+
+                list.add(myLine);
+            }
+        } catch (IOException e) {
+            throw new ApplicationException("Parsing file error");
+        } finally {
+            try {
+                bufRead.close();
+                input.close();
             } catch (IOException e) {
                 throw new ApplicationException("Parsing file error");
             }
-
-            if (myLine == null) break;
-
-            list.add(myLine);
         }
+
         return new TextFileString(target, list);
 
     }
@@ -71,7 +92,6 @@ public class MyFileUtils {
             String[] words = s.split(delims);
             nword += words.length;
 
-
             Integer max = null;
             Integer min = null;
             try {
@@ -82,6 +102,7 @@ public class MyFileUtils {
             }
 
             maxWord = (maxWord < max) ? max : maxWord;
+            minWord = maxWord;
             minWord = (minWord > min) ? min : minWord;
 
         }
