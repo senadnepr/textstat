@@ -15,8 +15,7 @@
 
 
         <form method="post" action="load" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="file">Load file for statistic</label>
+            <div class="form-group" style="alignment: center">
                 <input type="file" accept=".txt" name="file" class="form-control-file" id="file">
             </div>
             <button type="submit" class="btn btn-primary">Load</button>
